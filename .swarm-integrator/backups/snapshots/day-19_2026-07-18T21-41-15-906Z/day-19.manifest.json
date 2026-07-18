@@ -1,0 +1,29 @@
+{
+  "dayId": "day-19",
+  "sourceDir": "C:\\test3\\day-19-code",
+  "targetDir": "C:\\test3\\my-project",
+  "operations": [
+    {
+      "type": "CREATE",
+      "source": "app\\Jobs\\AgentTaskJob.php",
+      "dest": "app\\Jobs\\AgentTaskJob.php"
+    },
+    {
+      "type": "CREATE",
+      "source": "app\\Services\\AgentOrchestrator\\AgentDispatcher.php",
+      "dest": "app\\Services\\AgentOrchestrator\\AgentDispatcher.php"
+    },
+    {
+      "type": "INSERT",
+      "dest": "routes\\api.php",
+      "marker": "swarm-api-routes",
+      "content": "Route::prefix('orchestrator')->group(function () {\n    Route::post('/dispatch', [App\\Http\\Controllers\\OrchestratorController::class, 'dispatch']);\n    Route::get('/batch/{batchId}/status', [App\\Http\\Controllers\\OrchestratorController::class, 'batchStatus']);\n    Route::post('/batch/{batchId}/retry', [App\\Http\\Controllers\\OrchestratorController::class, 'retryBatch']);\n});"
+    },
+    {
+      "type": "INSERT",
+      "dest": "bootstrap\\providers.php",
+      "marker": "swarm-providers",
+      "content": "App\\Providers\\AgentOrchestratorServiceProvider::class,\n    App\\Providers\\WorkflowBatchServiceProvider::class,"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "file": "bootstrap\\providers.php",
+  "operation": "INSERT",
+  "timestamp": "2026-07-18T21:51:56.945Z",
+  "before": {
+    "content": "<?php\n\nreturn [\n    // SWARM: swarm-providers\n    App\\Providers\\AgentOrchestratorServiceProvider::class,\n    App\\Providers\\WorkflowBatchServiceProvider::class,\n    App\\Providers\\AppServiceProvider::class,\n];\n",
+    "size": 208,
+    "lines": 9
+  },
+  "after": {
+    "content": "<?php\n\nreturn [\n    // SWARM: swarm-providers\n    App\\Providers\\AgentOrchestratorServiceProvider::class,\n    App\\Providers\\WorkflowBatchServiceProvider::class,\n    App\\Providers\\AgentOrchestratorServiceProvider::class,\n    App\\Providers\\WorkflowBatchServiceProvider::class,\n    App\\Providers\\AppServiceProvider::class,\n];\n",
+    "size": 322,
+    "lines": 11
+  }
+}

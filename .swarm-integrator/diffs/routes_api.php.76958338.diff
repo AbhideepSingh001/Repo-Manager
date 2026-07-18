@@ -1,0 +1,11 @@
+{
+  "file": "routes\\api.php",
+  "operation": "INSERT",
+  "timestamp": "2026-07-18T21:41:16.010Z",
+  "before": {
+    "content": "<?php\n\nuse Illuminate\\Http\\Request;\nuse Illuminate\\Support\\Facades\\Route;\n\nRoute::middleware('auth:sanctum')->get('/user', function (Request $request) {\n    return $request->user();\n});\n\n// SWARM: swarm-api-routes\n",
+    "size": 214,
+    "lines": 11
+  },
+  "after": null
+}

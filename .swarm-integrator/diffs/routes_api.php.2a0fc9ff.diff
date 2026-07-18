@@ -1,0 +1,15 @@
+{
+  "file": "routes\\api.php",
+  "operation": "INSERT",
+  "timestamp": "2026-07-18T21:41:16.011Z",
+  "before": {
+    "content": "<?php\n\nuse Illuminate\\Http\\Request;\nuse Illuminate\\Support\\Facades\\Route;\n\nRoute::middleware('auth:sanctum')->get('/user', function (Request $request) {\n    return $request->user();\n});\n\n// SWARM: swarm-api-routes\n",
+    "size": 214,
+    "lines": 11
+  },
+  "after": {
+    "content": "<?php\n\nuse Illuminate\\Http\\Request;\nuse Illuminate\\Support\\Facades\\Route;\n\nRoute::middleware('auth:sanctum')->get('/user', function (Request $request) {\n    return $request->user();\n});\n\n// SWARM: swarm-api-routes\nRoute::prefix('orchestrator')->group(function () {\n    Route::post('/dispatch', [App\\Http\\Controllers\\OrchestratorController::class, 'dispatch']);\n    Route::get('/batch/{batchId}/status', [App\\Http\\Controllers\\OrchestratorController::class, 'batchStatus']);\n    Route::post('/batch/{batchId}/retry', [App\\Http\\Controllers\\OrchestratorController::class, 'retryBatch']);\n});\n",
+    "size": 588,
+    "lines": 16
+  }
+}

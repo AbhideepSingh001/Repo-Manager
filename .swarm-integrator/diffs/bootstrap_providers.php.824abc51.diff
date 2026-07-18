@@ -1,0 +1,11 @@
+{
+  "file": "bootstrap\\providers.php",
+  "operation": "INSERT",
+  "timestamp": "2026-07-18T21:41:16.014Z",
+  "before": {
+    "content": "<?php\n\nreturn [\n    // SWARM: swarm-providers\n    App\\Providers\\AppServiceProvider::class,\n];\n",
+    "size": 94,
+    "lines": 7
+  },
+  "after": null
+}
